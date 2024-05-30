@@ -4,39 +4,47 @@ export default function TextForm(props) {
     const handleUpClick = () => {
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to uppercase", "successfully:")
     };
 
     const handleLoClick = () => {
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to lowercase", "successfully:")
     };
 
     const handleOnChange = (event) => {
         setText(event.target.value);
+        
     };
 
     const handleClearClick = () => {
         setText('');
+        props.showAlert("Clear Text", "successfully:")
     };
 
     const handleCapitalizeClick = () => {
         let newText = text.replace(/\b\w/g, char => char.toUpperCase());
         setText(newText);
+        props.showAlert("Capitalize Text", "successfully:")
     };
 
     const handleReverseClick = () => {
         let newText = text.split('').reverse().join('');
         setText(newText);
+        props.showAlert("Reverse Text", "successfully:")
     };
 
     const handleCopyClick = () => {
         navigator.clipboard.writeText(text);
-        alert("Text copied to clipboard!");
+        props.showAlert("Text copied to clipboard!", "successfully: ");
+
     };
 
     const handleRemoveSpacesClick = () => {
         let newText = text.replace(/\s+/g, ' ').trim();
         setText(newText);
+        props.showAlert("Remove Space", "successfully:")
     };
 
     const [text, setText] = useState('Mandhoj Thing...');
