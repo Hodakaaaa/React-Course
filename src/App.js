@@ -26,10 +26,19 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
       showAlert("Dark mode has been enabled", "success: ");
+      document.title = "Mandhoj Text Utils | Dark Mode";
+      // setInterval(()=>{
+      //   document.title = "Welcome ";
+      // }, 2000);
+
+      // setInterval(()=>{
+      //   document.title = "Install Netflix";
+      // }, 1500);
     }else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success: ");
+      document.title = "Mandhoj Text Utils | Light Mode";
     }
     
   }
