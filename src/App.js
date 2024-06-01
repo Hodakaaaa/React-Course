@@ -22,7 +22,22 @@ function App() {
     }, 1500);
   }
 
-  const toggleMode = () => {
+  const removeBodyClasses = ()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-info');
+    document.body.classList.remove('bg-muted');
+    document.body.classList.remove('bg-secondary');
+  }
+
+  const toggleMode = (cls) => {
+    console.log(cls);
+    removeBodyClasses(); 
+    document.body.classList.add('bg-' + cls)
+
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
@@ -32,14 +47,14 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
-      document.title = "Mandhoj Text Utils | Light Mode";
+      document.title = "Mandhoj T ext Utils | Light Mode";
     }
   }
 
   return (
     <>
       <Router>
-        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} About="About-Us" />
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} about="About-Us" />
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
