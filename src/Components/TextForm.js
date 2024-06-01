@@ -56,13 +56,13 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor:props.mode ==='dark'?'grey':'white', color: props.mode === 'dark'?'white':'black' }} id="myBox" rows="10"></textarea>
                 </div>
-                <button className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className="btn btn-secondary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-danger mx-2" onClick={handleClearClick}>Clear Text</button>
-                <button className="btn btn-warning mx-2" onClick={handleCapitalizeClick}>Capitalize</button>
-                <button className="btn custom-button mx-2" onClick={handleReverseClick}>Reverse Text</button>
-                <button className="btn btn-success mx-2" onClick={handleCopyClick}>Copy Text</button>
-                <button className="btn btn-info mx-2" onClick={handleRemoveSpacesClick}>Remove Extra Spaces</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled = {text.length === 0} className="btn btn-secondary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
+                <button disabled = {text.length === 0} className="btn btn-danger mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
+                <button disabled = {text.length === 0} className="btn btn-warning mx-2 my-2" onClick={handleCapitalizeClick}>Capitalize</button>
+                <button disabled = {text.length === 0} className="btn custom-button mx-2 my-2" onClick={handleReverseClick}>Reverse Text</button>
+                <button disabled = {text.length === 0} className="btn btn-success mx-2 my-2" onClick={handleCopyClick}>Copy Text</button>
+                <button disabled = {text.length === 0} className="btn btn-info mx-2 my-2" onClick={handleRemoveSpacesClick}>Remove Extra Spaces</button>
             </div>
 
             <div className="container" style = {{ color:props.mode === 'dark'?'white':'black'}}>

@@ -2,7 +2,7 @@
 import React from 'react'
 
 //impt
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 //Link
 import {Link} from 'react-router-dom';
